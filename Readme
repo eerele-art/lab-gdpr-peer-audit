@@ -1,0 +1,51 @@
+Student / auditor: Elza Paegle, Maria Cavali
+Teammates / project builders: Gretel and Paola
+Project audited: Intellectus — Social Impact Intelligence
+Review date: 19 August 2026
+
+Submission files
+
+File
+
+Contents
+
+intellectus_gdpr_peer_audit_evidence_log.md
+
+Independent evidence annotations, personal-data map, role map, transfer analysis, and five-question clarification log
+
+intellectus_gdpr_peer_audit_report.md
+
+Two-page-equivalent GDPR audit report with findings, checklist, recommendation, and disclaimer
+
+intellectus_gdpr_peer_audit_debrief_and_remediation_plan.md
+
+Required debrief record plus a concrete remediation plan for the highest-priority gap
+
+The lab repository should also retain its original instructions.md and rubric.md files.
+
+Independent-review boundary
+
+This audit uses the Intellectus system description and technical architecture supplied through the project repository and pull request. The builders' GDPR self-audit conclusions, lawful-basis selection, DPIA conclusion, and gap list were not reviewed before this assessment. The technical material therefore served as the data-processing brief and evidence packet.
+
+Bottom line
+
+Do not proceed with production processing of real personal data yet. The local demo may continue with synthetic or non-personal sample data. Before production, the controller must document a lawful basis and legitimate-interests assessment where applicable, identify all processors and transfers, execute required data-processing agreements, implement the authenticated production gateway and retention controls, provide GDPR transparency, operationalise data-subject rights, and complete a documented DPIA screening.
+
+Required human step before submission
+
+Meet with Gretel and Paola and complete the clearly marked Pending teammate input fields in the debrief file. Record their actual lawful-basis and DPIA conclusions, compare both gap lists, and write the joint closing note together. No teammate response has been invented in this pack.
+
+Primary evidence
+
+Intellectus project pull request
+
+apps/intellectus-web/README.md
+
+apps/intellectus-web/docs/INFORMATION_ARCHITECTURE.md
+
+apps/intellectus-web/docs/N8N_INTEGRATION_CONTRACT.md
+
+apps/intellectus-web/docs/REPORT_MAPPING.md
+
+apps/intellectus-web/src/schemas/diagnosticTransport.ts
+
