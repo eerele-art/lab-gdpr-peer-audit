@@ -1,0 +1,117 @@
+Auditor: Elza Paegle, Maria Cavali
+Builders: Gretel and Paola
+Project: Intellectus — Social Impact Intelligence
+
+Phase 5 — Required debrief record
+
+Complete this section with Gretel and Paola after both independent audits are finished. Text marked Pending teammate input must contain their actual words or an agreed summary; it must not be guessed.
+
+1. Auditor presents
+
+Presentation record: Elza presented the system/data map, role assumptions, five findings, obligation checklist, and Do not proceed with production personal data recommendation without interruption. The central issues presented were: no documented lawful basis/Article 14 position; unknown vendors, DPAs, and transfers; incomplete production security/retention/rights operations; and no documented DPIA screening.
+
+Meeting date: Pending teammate input
+
+2. Builders respond
+
+Gretel and Paola's context, corrections, or missing evidence:
+Pending teammate input
+
+Changes made to the audit after their response:
+Pending teammate input — write “None” if no changes were needed
+
+3. Compare lawful-basis selections
+
+Review
+
+Primary conclusion
+
+External auditor
+
+Article 6(1)(f) legitimate interests may support necessary, bounded B2B public-source research only after an LIA; another basis must be documented for each separate purpose. Article 9/10 data should be excluded unless a specific legal condition is confirmed.
+
+Builders' self-audit
+
+Pending teammate input
+
+Agreement or disagreement and why
+
+Pending joint discussion
+
+4. Compare DPIA conclusions
+
+Review
+
+Conclusion
+
+External auditor
+
+A documented DPIA screening is required before production. A full DPIA is likely if the real deployment combines person-level sources at scale, evaluates people, handles sensitive/vulnerable-person data, or supports consequential decisions.
+
+Builders' self-audit
+
+Pending teammate input
+
+EDPB criteria discussed and final position
+
+Pending joint discussion
+
+5. Compare gap lists
+
+Comparison question
+
+Debrief answer
+
+What did the builders' self-audit catch that the external audit missed?
+
+Pending teammate input
+
+What did the external audit catch that the builders missed?
+
+Pending teammate input
+
+Which finding changed after new evidence was provided?
+
+Pending teammate input — write “None” if applicable
+
+6. Required joint closing note
+
+Write two to three sentences together:
+Pending joint text — What did this debrief reveal about the GDPR gaps that are hardest to see when auditing your own work?
+
+Debrief completion checklist
+
+Auditor presented without interruption.
+
+Builders had five minutes to respond.
+
+Lawful-basis selections were compared.
+
+DPIA conclusions were compared against the EDPB criteria.
+
+Both gap lists were compared.
+
+Joint closing note was written by both sides.
+
+Any new evidence and resulting report changes were recorded.
+
+Stretch — remediation plan for the most significant gap
+
+Work package: lawful basis, public-source transparency, and sensitive-data boundary
+
+Artifact that closes the gap: A signed processing-purpose register and legitimate-interests assessment for bounded public-source research, accompanied by Articles 13/14 privacy notices, an Article 14 exception decision where relevant, and a written rule that prohibits sensitive-person research, criminal-data processing, unrelated profiling, cross-client reuse, and model training unless separately approved.
+
+Owner: The controller's product owner prepares the processing map; the DPO/privacy lead owns the LIA and notices; engineering implements input warnings, person-level filters, source restrictions, and deletion/objection controls; external EU privacy counsel reviews unresolved Article 9, 10, or 14 questions.
+
+Realistic timeline: Ten business days for the first complete package if vendors and data flows are already known. Pause the clock when material vendor, purpose, or transfer facts remain unavailable. Do not enable real-person production processing before written approval.
+
+Closure evidence: Approved purpose register and LIA; dated DPO/legal sign-off; published and in-product notices; recorded Article 14 delivery/exception logic; tests showing prohibited inputs and uses are blocked or routed for review; a source/recipient register; a successful objection/deletion exercise; and change-control evidence that any new purpose triggers reassessment.
+
+Reinforce reflection prompts
+
+After the debrief, add one short paragraph answering each:
+
+Which question from Gretel and Paola could not be answered from the current documentation, and what documentation should be added?
+
+Which external finding did the builders initially disagree with, and did the discussion change either side's position?
+
