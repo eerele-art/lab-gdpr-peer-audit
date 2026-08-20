@@ -1,0 +1,277 @@
+Intellectus — GDPR Peer-Audit Evidence Log
+
+Auditor: Elza Paegle
+Project builders: Gretel and Paola
+Review date: 19 August 2026
+Independence statement: The review used technical system material only. The builders' GDPR self-audit findings were not reviewed.
+
+Phase 1 — Read and annotate
+
+The labels below replace handwritten annotations: DATA marks personal-data evidence, SPECIAL marks possible Article 9/10 data, TRANSFER marks an international-transfer question, PURPOSE marks a purpose-limitation issue, and CLARIFY marks missing evidence.
+
+Evidence from the brief and architecture
+
+Annotation
+
+Audit significance
+
+Intake contains organisation name, website, country, research period, and a free-text current_challenge.
+
+DATA / CLARIFY
+
+Organisation data is not automatically personal data, but the free-text field can contain employee, client, beneficiary, or contact information.
+
+The live workflow researches public web sources and produces source-linked evidence, findings, inferences, hypotheses, and unknowns.
+
+DATA / SPECIAL / PURPOSE
+
+Public availability does not remove GDPR protection. The workflow may collect or infer information about identifiable staff, founders, donors, partners, or beneficiaries, including sensitive traits.
+
+Outputs include source URLs, publishers, claims, confidence values, findings, and validation questions.
+
+DATA / SPECIAL
+
+These become personal data when linked or linkable to a person. Inferences may be sensitive even when the source did not state them explicitly.
+
+Consultants select questions and next steps, add notes, and make the Draft/Ready decision.
+
+DATA / PURPOSE
+
+Notes can include personal data. Human review reduces automated-decision risk but does not itself create a lawful basis.
+
+Browser state and notes are session-only and reset on reload; uploaded files are not sent in the current MVP.
+
+DATA
+
+This is a minimisation safeguard. It does not establish the retention period for n8n executions, API vendors, server logs, or backups.
+
+The browser calls an n8n webhook; public research and transformation occur upstream.
+
+TRANSFER / CLARIFY
+
+Provider identities, processing locations, subprocessors, and transfer mechanisms are not documented in the reviewed evidence.
+
+A direct browser-to-workflow connection cannot protect a secret; an authenticated gateway, restricted CORS, rate limits, redacted logs, restricted execution access, and deletion/retention rules are still required for production.
+
+DATA / CLARIFY
+
+The builders have identified material Article 25 and 32 production gaps.
+
+The workflow distinguishes facts, inferences, hypotheses, and unknowns and requires validation of non-observed findings.
+
+PURPOSE
+
+Useful accuracy and fairness safeguard, but it does not prevent incompatible reuse, model training, or person-level profiling unless those uses are contractually and technically prohibited.
+
+Phase 2 — Personal-data summary
+
+Data category
+
+Source
+
+Purpose(s)
+
+Crosses EU border?
+
+Special category?
+
+Consultant identity, IP address, device/request metadata, correlation and run IDs
+
+Consultant, browser, hosting and workflow systems
+
+Access, delivery, security, troubleshooting
+
+Cannot determine; vendor locations are absent
+
+Usually no, but identifiers remain personal data
+
+Organisation name, website, country, research window
+
+Consultant
+
+Define the organisation-level research target
+
+Cannot determine once sent to n8n/vendors
+
+Usually no; sole traders or named organisations may identify a person
+
+Free-text current challenge
+
+Consultant/client
+
+Scope the diagnostic
+
+Cannot determine
+
+Possible if health, disability, ethnicity, political views, union status, sexuality, religion, or criminal matters are entered
+
+Public-source names, roles, quotations, contact details, employment histories, and online activity
+
+Public websites and publishers
+
+Research and evidence assembly
+
+Likely possible; not documented
+
+Possible/inferable, particularly for beneficiaries or vulnerable groups
+
+Derived claims, confidence scores, findings, hypotheses, contradictions, and validation questions
+
+Intellectus/n8n workflow
+
+Produce consultant-reviewed analysis
+
+Cannot determine
+
+Possible if linked to a person or if sensitive traits are inferred
+
+Consultant notes, question selections, next steps, and Draft/Ready status
+
+Consultant
+
+Prepare and review a client conversation brief
+
+Current MVP is session-only; future flow unknown
+
+Possible if notes concern identifiable people
+
+Uploaded documents and document references
+
+Future user upload boundary
+
+Future client-evidence analysis
+
+Not sent in the current MVP; future route unknown
+
+Potentially yes; current request schema rejects non-empty references
+
+Data-flow summary
+
+Consultant browser
+  -> organisation intake and free text
+  -> n8n webhook / end-to-end workflow
+  -> public-web research and third-party services
+  -> sources, evidence, findings and inferences
+  -> browser session
+  -> consultant selects, edits and marks the brief ready
+
+Role map
+
+Entity
+
+First-pass role
+
+Processing activity
+
+DPA needed?
+
+Client consultancy or organisation that determines why and how Intellectus is used
+
+Controller
+
+Selects research target, purpose, users, output use, retention, and recipients
+
+No DPA with itself; it remains accountable under Articles 5, 6, 12–22, 24, 25, 30 and 32
+
+Gretel/Paola team or future Intellectus operator
+
+Processor if operating the hosted workflow only on documented client instructions; possibly independent/joint controller for any own analytics, product improvement, or training purpose
+
+Hosts/operates the diagnostic and transforms intake and research material
+
+Yes under Article 28 if it processes personal data for the client; role and own-purpose limits must be confirmed
+
+n8n hosting provider, cloud host, language-model provider, research/search provider, logging/monitoring service
+
+Processor/subprocessor if handling data for the controller; role may differ for independent purposes
+
+Workflow execution, hosting, research, generation, logging, monitoring
+
+Yes for processor relationships; subprocessor authorisation and equivalent obligations are required
+
+Public-source publishers
+
+Usually independent controllers for their own publication
+
+Originally published material later collected by Intellectus
+
+No Article 28 DPA for public collection, but source legality, Article 14 transparency, accuracy, and objection rights remain relevant
+
+The final role allocation depends on contracts and actual purposes, not labels alone. If Intellectus or a vendor reuses input/output for training or its own analytics, that actor may become a controller for that separate purpose.
+
+International-transfer note
+
+No vendor list, hosting region, support-access location, model endpoint, or transfer mechanism is evidenced. Before any EEA personal data is sent outside the EEA, the controller must identify the transfer route and document an adequacy decision or appropriate safeguard such as the European Commission's Standard Contractual Clauses, together with the required transfer assessment and supplementary measures where needed. The same review applies to remote access and subprocessors, not only server location.
+
+Phase 3 — Clarifying-questions log
+
+#
+
+What is needed
+
+Why it matters
+
+Provisional assumption without an answer
+
+Status
+
+1
+
+Who is the production controller, who operates Intellectus, and may the builders/vendors reuse inputs, outputs, or logs for analytics or model training?
+
+Determines Articles 5, 6, 24 and 28 role allocation, lawful basis, compatible purpose, and DPA scope.
+
+The client is controller; the operator is processor; all own-purpose reuse and training are prohibited unless separately assessed and disclosed.
+
+Pending written response
+
+2
+
+Which n8n host, cloud provider, model/API, search provider, logging tools, subprocessors, processing regions, and support locations are used?
+
+Required for Articles 28, 30, 32 and Chapter V transfer compliance.
+
+At least one third-party service processes requests; location and transfer legality cannot be verified.
+
+Pending written response
+
+3
+
+Can users enter person-level or confidential data, and can research collect or infer special-category or criminal-conviction data about staff, donors, partners, or beneficiaries?
+
+Determines minimisation, Article 9/10 conditions, notice content, DPIA need, and whether a deny/filter rule is required.
+
+Person-level data can enter through free text and public research; sensitive data is possible but not intended.
+
+Pending written response
+
+4
+
+What are the retention/deletion periods for n8n executions, source snapshots, model-provider logs, gateway logs, backups, run IDs, and browser state, and how will access/erasure/objection requests be fulfilled?
+
+Required for Articles 5(1)(e), 12–22, 25, 30 and 32.
+
+Browser data is session-only, but upstream retention and rights procedures are undefined.
+
+Pending written response
+
+5
+
+At what scale and for what decisions will the outputs be used—conversation preparation only, or grants, benefits, employment, eligibility, service access, or evaluation of individuals?
+
+Affects purpose limitation, DPIA criteria, fairness, and Article 22; consequential person-level use changes the risk profile.
+
+Use is limited to organisation-level consulting preparation with meaningful human review and no solely automated significant decision.
+
+Pending written response
+
+Legal references used
+
+GDPR, Regulation (EU) 2016/679
+
+EDPB guidance on legitimate interests under Article 6(1)(f)
+
+EDPB SME guide: DPIA triggers and compliance measures
+
+European Commission standard contractual clauses register
+
