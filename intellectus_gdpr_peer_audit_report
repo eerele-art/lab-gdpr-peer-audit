@@ -1,0 +1,115 @@
+Intellectus — Independent GDPR Peer-Audit Report
+
+Auditor: Elza Paegle, Maria Cavali
+Builders: Gretel and Paola
+Date: 19 August 2026
+
+1. System summary
+
+Intellectus is a consultant-facing tool that turns organisation intake and public web information into source-linked evidence, findings, hypotheses, questions, recommendations, measures, and a draft conversation brief. Intake includes an organisation name, website, country, research dates, and a free-text challenge. A consultant reviews the results, chooses what to include, adds notes, and makes the final Draft/Ready decision. The current browser experience is session-only, but a live n8n workflow performs research and transformation and may retain execution data.
+
+2. Data and role map
+
+Personal data can enter through free text, public sources, derived inferences, notes, and technical logs; sensitive data could also be entered or inferred. The client choosing the purpose is the likely controller. An Intellectus operator is likely a processor when acting only on instructions; n8n, hosting, model, research, and logging providers may be processors/subprocessors. Own-purpose analytics or training may create a separate controller role. Vendor identities, locations, DPAs, and transfer mechanisms are not evidenced.
+
+3. Compliance findings
+
+Finding 1 — Lawful basis and indirect-data transparency
+Severity: Blocking
+Description: No lawful basis is documented for researching identifiable people. Article 6(1)(f) may support bounded B2B research only after necessity and rights-balancing are documented. Sensitive or criminal data also needs an Article 9 or 10 route. Public-source data generally triggers Article 14 unless a narrow exception applies.
+Recommended action: Map purposes/data; complete a legitimate-interests assessment; exclude sensitive/person-level research by default; obtain DPO/legal approval; issue Articles 13/14 notices and document any exception.
+Escalation needed? Yes — controller, DPO/privacy counsel.
+
+Finding 2 — Processor contracts, vendors, and transfers
+Severity: Blocking
+Description: Services receiving data, their roles/locations, contracts, subprocessors, and safeguards are not identified. Personal-data processing without a required Article 28 agreement is blocking; non-EEA access needs a Chapter V mechanism.
+Recommended action: Register all vendors/flows; confirm roles/regions; execute DPAs; approve subprocessors; document adequacy or SCCs plus transfer assessment and safeguards; prohibit undisclosed reuse/training.
+Escalation needed? Yes — procurement, DPO/privacy counsel, security.
+
+Finding 3 — Production security, retention, and rights operations
+Severity: Blocking
+Description: Authentication, gateway controls, restricted CORS, limits, redacted logs, execution access, and retention/deletion rules are pending. Session-only browser storage does not resolve upstream retention. No process supports access, correction, erasure, restriction, or objection within deadlines.
+Recommended action: Exclude real data until the gateway and access controls are deployed; set retention; enable run-level search/deletion; redact logs; document rights-request handling and processor assistance.
+Escalation needed? Yes — security lead, platform owner, DPO.
+
+Finding 4 — DPIA screening, minimisation, and purpose boundary
+Severity: Significant
+Description: No DPIA screening is evidenced. Organisation-level human-reviewed use is not automatically high risk, but innovative AI, scoring, combined sources, vulnerable/sensitive data, scale, or consequential use can trigger Article 35. Free text and broad research may exceed necessity.
+Recommended action: Approve a DPIA screening before production and complete a full DPIA if triggered; add input filters, person-level restrictions, source limits, and new-use review.
+Escalation needed? Yes — DPO and, if residual risk remains high, the supervisory authority under Article 36.
+
+Finding 5 — Automated decisions and human review boundary
+Severity: Minor for the documented use
+Description: Article 22 appears inapplicable because a consultant controls the final brief. Fact/inference/hypothesis labels help, but session-only review is not durable and later grants, benefits, hiring, or eligibility use could have significant effects.
+Recommended action: Restrict use to conversation preparation; require named approval and an appropriate audit record; reassess any consequential person-level use.
+Escalation needed? No for the present scope; yes before any consequential expansion.
+
+4. Specific GDPR obligations checklist
+
+Obligation
+
+Assessment
+
+Note
+
+Lawful basis identified for each processing purpose
+
+Gap identified
+
+No Article 6 assessment; Article 9/10 route also absent if sensitive/criminal data enters
+
+Purpose limitation respected
+
+Cannot determine from brief
+
+Intended purpose is bounded, but vendor training, own analytics, reuse, and later consequential use are not controlled
+
+Data minimisation
+
+Gap identified
+
+Session-only state and rejected uploads help; free text and broad public research still need limits
+
+Roles mapped and DPAs in place
+
+Cannot determine from brief
+
+Roles can be mapped provisionally, but contracts and subprocessors are not evidenced
+
+International-transfer mechanism documented
+
+Cannot determine from brief
+
+Vendors, access locations, adequacy/SCCs, and transfer assessment are absent
+
+DPIA conducted if required
+
+Cannot determine from brief
+
+No screening or DPIA evidence; production facts may trigger Article 35
+
+Article 22 safeguard if automated decisions affect people
+
+Appears met for present purpose
+
+Human-reviewed advisory output; no documented solely automated significant decision
+
+Privacy notice covers AI processing
+
+Gap identified
+
+No Articles 13/14 notice for research, inference, vendors, retention, rights, or objections
+
+Data-subject rights can be operationalised
+
+Gap identified
+
+No search, correction, erasure, restriction, objection, or processor-assistance procedure evidenced
+
+5. Overall recommendation
+
+Do not proceed with production processing of real personal data. A controlled synthetic/non-personal demo may continue. Before production, approve the lawful-basis and Article 14 position, sensitive-data controls, DPIA screening, DPAs/transfers, secure gateway, retention, and rights procedures. These are pre-processing conditions.
+
+6. What this report is not
+
+This first-pass report is not a legal opinion, DPIA, transfer impact assessment, or certification of GDPR compliance. It is based on limited project documentation and provisional assumptions. The controller should verify the conclusions with its DPO or qualified EU privacy counsel before relying on them or processing real personal data.
